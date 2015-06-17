@@ -80,9 +80,6 @@ PORT = 9000                   #Listen on this port
 LOGFILE = '/var/log/freesmdr/freesmdr.log' #Where to log the received data
 LOGINFO = '/var/log/freesmdr/freesmdr.info' #Debug output
 
-# Temporal fix para el problema de codificación
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 #MYSQL_DB = {
 #    'host': 'localhost',
