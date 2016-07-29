@@ -70,12 +70,16 @@ import logging
 import datetime
 import time
 
+# change sys to utf 8
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 # Info
 NAME = 'Free SMDR'
 VERSION = '0.9'
 
 # Settings
-HOST = '192.168.49.99'                     #Listen on this IP
+HOST = '192.168.6.17'                     #Listen on this IP
 PORT = 9000                   #Listen on this port
 LOGFILE = '/var/log/freesmdr/freesmdr.log' #Where to log the received data
 LOGINFO = '/var/log/freesmdr/freesmdr.info' #Debug output
@@ -145,7 +149,7 @@ class RecvHandler(BaseRequestHandler):
         log.info(u'Got connection from ' + unicode(peerinfo[0]) + ' (' + unicode(peerinfo[1]) + ')')
 
         #Init connection to database
-        conn = psycopg2.connect("dbname=smdr user=postgres")
+        conn = psycopg2.connect("dbname=smdr user=smdr password=Arisanet2007")
         #conn = MySQLdb.connect(
         #        host = MYSQL_DB['host'],
         #        user = MYSQL_DB['user'],
